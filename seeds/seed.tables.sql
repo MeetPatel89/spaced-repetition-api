@@ -11,7 +11,7 @@ VALUES
     1,
     'mpatel89',
     'Meet Patel',
-    -- password = "RandomPatel89"
+    -- password = "RandomPatel89#"
     '$2a$10$fCWkaGbt7ZErxaxclioLteLUgg4Q3Rp09WW0s/wSLxDKYsaGYUpjG'
   );
 

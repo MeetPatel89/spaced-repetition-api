@@ -9,9 +9,9 @@ INSERT INTO "user" ("id", "username", "name", "password")
 VALUES
   (
     1,
-    'mpatel89',
-    'Meet Patel',
-    -- password = "RandomPatel89#"
+    'fibonacci89',
+    'Fibonacci Spiral',
+    -- password = "RandomFibonacci89#"
     '$2a$10$fCWkaGbt7ZErxaxclioLteLUgg4Q3Rp09WW0s/wSLxDKYsaGYUpjG'
   );
 

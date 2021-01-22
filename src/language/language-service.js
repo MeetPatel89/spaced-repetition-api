@@ -65,6 +65,13 @@ const LanguageService = {
     }
     return wordList;
   },
+  updateWord(db, word) {
+    return db.from('word').where({ id: word.id }).update({
+      memory_value: word.memory_value,
+      incorrect_count: word.incorrect_count,
+      correct_count: word.correct_count,
+    });
+  },
 };
 
 module.exports = LanguageService

@@ -78,6 +78,28 @@ const LanguageService = {
       .where({ id: language.id })
       .update({ total_score: language.total_score + 1 });
   },
+  persistLinkedList(db, linkedLanguage) {
+    return db.transaction((trx) =>
+      Promise.all([
+        db('language').transacting(trx).where('id', linkedLanguage.id).update({
+          total_score: linkedLanguage.total_score,
+          head: linkedLanguage.head.value.id,
+        }),
+
+        ...linkedLanguage.forEach((node) =>
+          db('word')
+            .transacting(trx)
+            .where('id', node.value.id)
+            .update({
+              memory_value: node.value.memory_value,
+              correct_count: node.value.correct_count,
+              incorrect_count: node.value.incorrect_count,
+              next: node.next ? node.next.value.id : null,
+            })
+        ),
+      ])
+    );
+  },
 };
 
 module.exports = LanguageService

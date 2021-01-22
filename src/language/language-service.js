@@ -72,6 +72,12 @@ const LanguageService = {
       correct_count: word.correct_count,
     });
   },
+  incrementTotalScore(db, language) {
+    return db
+      .from('language')
+      .where({ id: language.id })
+      .update({ total_score: language.total_score + 1 });
+  },
 };
 
 module.exports = LanguageService

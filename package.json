@@ -1,10 +1,10 @@
 {
-  "name": "express-boilerplate",
+  "name": "Spaced-repetition-api",
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "test": "mocha --require test/setup.js",
+    "test": "mocha --timeout 10000 --require test/setup.js",
     "dev": "nodemon src/server.js",
     "migrate": "postgrator --config postgrator-config.js",
     "migrate:test": "env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate",
@@ -13,6 +13,9 @@
     "deploy": "git push heroku master"
   },
   "keywords": [],
+  "engines": {
+    "node": "14.13.0"
+  },
   "author": "Tom `tomatao` HT <tomht@thinkful.com>",
   "license": "MIT",
   "dependencies": {

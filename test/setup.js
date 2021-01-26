@@ -5,8 +5,9 @@ process.env.JWT_EXPIRY = '3m'
 
 require('dotenv').config()
 
-process.env.TEST_DATABASE_URL = process.env.TEST_DATABASE_URL
-  || "postgresql://dunder-mifflin@localhost/spaced-repetition-test"
+process.env.TEST_DATABASE_URL =
+  process.env.TEST_DATABASE_URL ||
+  'postgresql://nautilus_shell:Fibonaccispiral89@localhost/spaced-repetition-test';
 
 const { expect } = require('chai')
 const supertest = require('supertest')

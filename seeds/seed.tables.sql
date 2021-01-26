@@ -12,7 +12,7 @@ VALUES
     'fibonacci89',
     'Fibonacci Spiral',
     -- password = "RandomFibonacci89#"
-    '$2a$10$fCWkaGbt7ZErxaxclioLteLUgg4Q3Rp09WW0s/wSLxDKYsaGYUpjG'
+    'RandomFibonacci89#'
   );
 
 INSERT INTO "language" ("id", "name", "user_id")

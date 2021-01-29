@@ -1,52 +1,33 @@
-# Spaced repetition API!
+# Spaced Repetition API Server
 
-## Local dev setup
+## Repositories
+Server Repo https://github.com/MeetPatel89/spaced-repetition-api
 
-If using user `dunder-mifflin`:
+Client Repo https://github.com/MeetPatel89/spaced-repetition
 
-```bash
-mv example.env .env
-createdb -U dunder-mifflin spaced-repetition
-createdb -U dunder-mifflin spaced-repetition-test
-```
+## Live Links
+- Live Client https://spaced-repetition-client-iota.vercel.app/register
+- Live Server https://lit-crag-58856.herokuapp.com/
 
-If your `dunder-mifflin` user has a password be sure to set it in `.env` for all appropriate fields. Or if using a different user, update appropriately.
+## Summary
 
-```bash
-npm install
-npm run migrate
-env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate
-```
+This project uses spaced repetition to allow the user to register an account, learn a set number of Gujarati (one of the many Indian languages) words from a database, keep track of their score, and the number of times they've gotten a word correct and incorrect.
 
-And `npm test` should work at this point
+## Tech Stack
 
-## Configuring Postgres
+### FrontEnd
+- JavaScript
+- React
+- React-Router
+- Context
+- Cypress (testing)
 
-For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
+### Backend
+- NodeJs
+- Express
+- Knex
+- CORS
+- Chai, Mocha, supertest (testing)
 
-1. Locate the `postgresql.conf` file for your Postgres installation.
-   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
-   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
-   3. E.g  on Ubuntu 18.04 probably: '/etc/postgresql/10/main/postgresql.conf'
-2. Find the `timezone` line and set it to `UTC`:
-
-```conf
-# - Locale and Formatting -
-
-datestyle = 'iso, mdy'
-#intervalstyle = 'postgres'
-timezone = 'UTC'
-#timezone_abbreviations = 'Default'     # Select the set of available time zone
-```
-
-## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests mode `npm test`
-
-Run the migrations up `npm run migrate`
-
-Run the migrations down `npm run migrate -- 0`
+### Database
+- PostgreSQL
